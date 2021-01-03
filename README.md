@@ -10,7 +10,7 @@ This App has been hosted on Netlify.
 
 ### Demo
 
-![DEMO GIF](https://github.com/prithviBytes/react-todolist-app/blob/main/TodoList.gif?raw=true)
+![DEMO GIF](https://github.com/prithviBytes/react-todolist-app/blob/main/TodoList%20(2).gif?raw=true)
 
 ### Try it out !!!
 
