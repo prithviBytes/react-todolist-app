@@ -14,7 +14,7 @@ This App has been hosted on Netlify.
 
 ### Try it out !!!
 
-You can check out the App over here -> <a href="https://csb-731nl.netlify.app/">React | Todo List</a>
+You can check out the App over here -> <a href="https://doittodayy.netlify.app/">React | Todo List</a>
 
 ### Credits
 
