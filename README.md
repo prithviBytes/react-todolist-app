@@ -2,7 +2,7 @@
 
 ### General Info
 
-Its mandatory to build a Todo Application while learning any Web-Dev framework. I made this Todo-List using React.
+Its mandatory to build a Todo Application while learning any Web-Dev framework. I made this Todo-List using React. The data stays persistant in the local storage.
 
 ### Environment
 
