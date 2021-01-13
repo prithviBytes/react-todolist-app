@@ -7,7 +7,7 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: []
+      todos: JSON.parse(window.localStorage.getItem("todos") || "[]")
     };
     this.create = this.create.bind(this);
     this.update = this.update.bind(this);
@@ -15,9 +15,13 @@ class TodoList extends Component {
     this.remove = this.remove.bind(this);
   }
   create(newTodo) {
-    this.setState({
-      todos: [...this.state.todos, newTodo]
-    });
+    this.setState(
+      {
+        todos: [...this.state.todos, newTodo]
+      },
+      () =>
+        window.localStorage.setItem("todos", JSON.stringify(this.state.todos))
+    );
   }
   update(id, updatedTodo) {
     const updatedTodos = this.state.todos.map((todo) => {
@@ -27,7 +31,9 @@ class TodoList extends Component {
         return todo;
       }
     });
-    this.setState({ todos: updatedTodos });
+    this.setState({ todos: updatedTodos }, () =>
+      window.localStorage.setItem("todos", JSON.stringify(this.state.todos))
+    );
   }
   toggleCompletion(id) {
     const updatedTodos = this.state.todos.map((todo) => {
@@ -37,12 +43,18 @@ class TodoList extends Component {
         return todo;
       }
     });
-    this.setState({ todos: updatedTodos });
+    this.setState({ todos: updatedTodos }, () =>
+      window.localStorage.setItem("todos", JSON.stringify(this.state.todos))
+    );
   }
   remove(id) {
-    this.setState({
-      todos: this.state.todos.filter((t) => t.id !== id)
-    });
+    this.setState(
+      {
+        todos: this.state.todos.filter((t) => t.id !== id)
+      },
+      () =>
+        window.localStorage.setItem("todos", JSON.stringify(this.state.todos))
+    );
   }
   render() {
     let todos = this.state.todos.map((todo) => {
